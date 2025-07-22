@@ -4,37 +4,38 @@
 
 /* Personal Showcase Design System - Professional with Artistic Flair */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Core Color Palette - Sophisticated and Modern */
-    --background: 0 0% 99%;
-    --foreground: 220 13% 18%;
+    /* Core Color Palette - Elegant Muted Blue + Ivory */
+    --background: 45 29% 97%;
+    --foreground: 215 25% 15%;
 
-    /* Artistic Accent Colors */
-    --primary: 259 94% 51%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 259 94% 71%;
+    /* Professional Primary - Muted Blue */
+    --primary: 215 28% 45%;
+    --primary-foreground: 45 29% 97%;
+    --primary-glow: 215 35% 65%;
     
-    --secondary: 220 13% 95%;
-    --secondary-foreground: 220 13% 18%;
+    --secondary: 45 20% 93%;
+    --secondary-foreground: 215 25% 15%;
     
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 98%;
-    --accent-glow: 142 76% 56%;
+    /* Elegant Accent - Charcoal with Blue Undertones */
+    --accent: 215 15% 25%;
+    --accent-foreground: 45 29% 97%;
+    --accent-glow: 215 20% 45%;
 
     /* UI Elements */
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 18%;
-    --card-border: 220 13% 91%;
+    --card: 45 40% 98%;
+    --card-foreground: 215 25% 15%;
+    --card-border: 45 15% 88%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 45 25% 94%;
+    --muted-foreground: 215 12% 55%;
     
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 259 94% 51%;
+    --border: 45 15% 88%;
+    --input: 45 15% 88%;
+    --ring: 215 28% 45%;
 
     /* Artistic Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
@@ -72,33 +73,34 @@
   }
 
   .dark {
-    /* Dark Mode - Sophisticated Night Theme */
-    --background: 220 27% 8%;
-    --foreground: 0 0% 95%;
+    /* Dark Mode - Elegant Charcoal Theme */
+    --background: 215 25% 6%;
+    --foreground: 45 25% 92%;
 
-    /* Artistic Accent Colors - Dark Mode */
-    --primary: 259 94% 61%;
-    --primary-foreground: 220 27% 8%;
-    --primary-glow: 259 94% 81%;
+    /* Dark Mode Primary - Brighter Muted Blue */
+    --primary: 215 35% 65%;
+    --primary-foreground: 215 25% 6%;
+    --primary-glow: 215 40% 75%;
     
-    --secondary: 220 27% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 215 25% 10%;
+    --secondary-foreground: 45 25% 92%;
     
-    --accent: 142 76% 46%;
-    --accent-foreground: 220 27% 8%;
-    --accent-glow: 142 76% 66%;
+    /* Dark Mode Accent - Soft Warm Contrast */
+    --accent: 45 15% 75%;
+    --accent-foreground: 215 25% 6%;
+    --accent-glow: 45 20% 85%;
 
     /* UI Elements - Dark Mode */
-    --card: 220 27% 10%;
-    --card-foreground: 0 0% 95%;
-    --card-border: 220 27% 18%;
+    --card: 215 25% 8%;
+    --card-foreground: 45 25% 92%;
+    --card-border: 215 20% 18%;
 
-    --muted: 220 27% 12%;
-    --muted-foreground: 220 9% 65%;
+    --muted: 215 25% 10%;
+    --muted-foreground: 215 8% 65%;
     
-    --border: 220 27% 18%;
-    --input: 220 27% 18%;
-    --ring: 259 94% 61%;
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 215 35% 65%;
 
     /* Dark Mode Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
@@ -128,7 +130,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }
 
@@ -163,6 +165,10 @@
   /* Typography Utilities */
   .font-display {
     font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'DM Sans', 'Inter', sans-serif;
   }
   
   .font-inter {

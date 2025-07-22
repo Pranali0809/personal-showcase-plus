@@ -56,7 +56,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <motion.div 
+      className="min-h-screen bg-background"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       {/* Navigation */}
       <Navigation 
         activeSection={activeSection} 
@@ -64,30 +69,36 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <main className="pt-16">
+      <motion.main 
+        className="pt-16"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+      >
         <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
         <AchievementsSection />
         <LibrarySection />
         <ContactSection />
-      </main>
+      </motion.main>
 
       {/* Footer */}
       <motion.footer
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="bg-card border-t border-border py-8"
       >
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            © 2024 Personal Portfolio. Crafted with{" "}
+            © 2024 Software & ML Engineer Portfolio. Crafted with{" "}
             <span className="text-red-500">♥</span> using React & Framer Motion
           </p>
         </div>
       </motion.footer>
-    </div>
+    </motion.div>
   );
 };
 
