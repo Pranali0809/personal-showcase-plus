@@ -1,0 +1,168 @@
+import { motion } from "framer-motion";
+import { Award, Trophy, Star, Target } from "lucide-react";
+
+const achievements = [
+  {
+    id: 1,
+    title: "Best Developer Award 2023",
+    organization: "TechFlow Solutions",
+    date: "December 2023",
+    description: "Recognized for outstanding technical leadership and innovative solutions that increased team productivity by 40%",
+    icon: Award,
+    type: "award"
+  },
+  {
+    id: 2,
+    title: "Open Source Contributor",
+    organization: "React Community",
+    date: "2022 - Present",
+    description: "Active contributor to React ecosystem with 500+ GitHub stars and multiple featured repositories",
+    icon: Star,
+    type: "contribution"
+  },
+  {
+    id: 3,
+    title: "Project Excellence Recognition",
+    organization: "Digital Innovations Inc",
+    date: "June 2022",
+    description: "Led successful delivery of enterprise platform serving 50,000+ users with 99.9% uptime",
+    icon: Trophy,
+    type: "achievement"
+  },
+  {
+    id: 4,
+    title: "Certified AWS Solutions Architect",
+    organization: "Amazon Web Services",
+    date: "March 2022",
+    description: "Professional certification demonstrating expertise in designing distributed systems on AWS",
+    icon: Target,
+    type: "certification"
+  },
+  {
+    id: 5,
+    title: "Hackathon Winner",
+    organization: "TechCrunch Disrupt",
+    date: "September 2021",
+    description: "First place winner for innovative AI-powered developer tool that reduces debugging time by 60%",
+    icon: Trophy,
+    type: "competition"
+  }
+];
+
+const iconColors = {
+  award: "text-yellow-500",
+  contribution: "text-blue-500",
+  achievement: "text-purple-500",
+  certification: "text-green-500",
+  competition: "text-red-500"
+};
+
+export const AchievementsSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  return (
+    <section id="achievements" className="py-20 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">
+            Key <span className="gradient-text">Achievements</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Milestones and recognitions that showcase growth, impact, and commitment to excellence
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {achievements.map((achievement) => {
+            const IconComponent = achievement.icon;
+            return (
+              <motion.div
+                key={achievement.id}
+                variants={itemVariants}
+                className="card-artistic p-6 hover-lift group"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className={`p-3 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 group-hover:from-primary/20 group-hover:to-accent/20 transition-colors ${iconColors[achievement.type]}`}>
+                    <IconComponent className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-display font-semibold text-lg mb-1 group-hover:gradient-text transition-all duration-300">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-sm font-medium text-primary mb-1">
+                      {achievement.organization}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {achievement.date}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {achievement.description}
+                </p>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+        >
+          {[
+            { label: "Projects Completed", value: "25+" },
+            { label: "Years Experience", value: "5+" },
+            { label: "GitHub Stars", value: "500+" },
+            { label: "Happy Clients", value: "100%" }
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              className="text-center p-6 card-artistic"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="text-3xl font-display font-bold gradient-text mb-2">
+                {stat.value}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
