@@ -8,22 +8,22 @@
 
 @layer base {
   :root {
-    /* Core Color Palette - Elegant Muted Blue + Ivory */
+    /* Core Color Palette - Keep Current Background */
     --background: 45 29% 97%;
     --foreground: 215 25% 15%;
 
-    /* Professional Primary - Muted Blue */
-    --primary: 215 28% 45%;
-    --primary-foreground: 45 29% 97%;
-    --primary-glow: 215 35% 65%;
+    /* Vibrant Primary - Clear Soft Blue */
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 85% 70%;
     
     --secondary: 45 20% 93%;
     --secondary-foreground: 215 25% 15%;
     
-    /* Elegant Accent - Charcoal with Blue Undertones */
-    --accent: 215 15% 25%;
-    --accent-foreground: 45 29% 97%;
-    --accent-glow: 215 20% 45%;
+    /* Vibrant Accent - Clear Soft Purple */
+    --accent: 280 85% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 280 80% 75%;
 
     /* UI Elements */
     --card: 45 40% 98%;
@@ -77,18 +77,18 @@
     --background: 215 25% 6%;
     --foreground: 45 25% 92%;
 
-    /* Dark Mode Primary - Brighter Muted Blue */
-    --primary: 215 35% 65%;
+    /* Dark Mode Primary - Vibrant Blue */
+    --primary: 220 90% 65%;
     --primary-foreground: 215 25% 6%;
-    --primary-glow: 215 40% 75%;
+    --primary-glow: 220 85% 75%;
     
     --secondary: 215 25% 10%;
     --secondary-foreground: 45 25% 92%;
     
-    /* Dark Mode Accent - Soft Warm Contrast */
-    --accent: 45 15% 75%;
+    /* Dark Mode Accent - Vibrant Purple */
+    --accent: 280 85% 70%;
     --accent-foreground: 215 25% 6%;
-    --accent-glow: 45 20% 85%;
+    --accent-glow: 280 80% 80%;
 
     /* UI Elements - Dark Mode */
     --card: 215 25% 8%;
@@ -192,6 +192,11 @@
     animation: scaleIn 0.5s ease-out forwards;
   }
   
+  /* Progress Bar Animation */
+  .progress-bar {
+    animation: progressSlide 0.8s ease-out forwards;
+  }
+  
   /* Interactive Utilities */
   .hover-lift {
     @apply hover:-translate-y-2 transition-transform duration-300;
@@ -232,5 +237,14 @@
   to { 
     opacity: 1; 
     transform: scale(1); 
+  }
+}
+
+@keyframes progressSlide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width);
   }
 }

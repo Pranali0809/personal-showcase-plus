@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Trophy, Star, Target } from "lucide-react";
+import { useState } from "react";
 
 const achievements = [
   {
@@ -58,6 +59,8 @@ const iconColors = {
 };
 
 export const AchievementsSection = () => {
+  const [showAllAchievements, setShowAllAchievements] = useState(false);
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -72,6 +75,9 @@ export const AchievementsSection = () => {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1 },
   };
+
+  // Show all achievements or limit display
+  const displayedAchievements = showAllAchievements ? achievements : achievements;
 
   return (
     <section id="achievements" className="py-20 bg-muted/30">
@@ -96,9 +102,9 @@ export const AchievementsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
-          {achievements.map((achievement) => {
+          {displayedAchievements.map((achievement) => {
             const IconComponent = achievement.icon;
             return (
               <motion.div

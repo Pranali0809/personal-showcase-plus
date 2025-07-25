@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
+import { ProgressBar } from "@/components/ProgressBar";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { AchievementsSection } from "@/components/sections/AchievementsSection";
+import { SkillsSection } from "@/components/sections/SkillsSection";
 import { LibrarySection } from "@/components/sections/LibrarySection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -34,7 +36,7 @@ const Index = () => {
   // Update active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'projects', 'experience', 'achievements', 'library', 'contact'];
+      const sections = ['about', 'projects', 'experience', 'achievements', 'skills', 'library', 'contact'];
       const scrollY = window.scrollY + 100; // Offset for navigation height
 
       for (const sectionId of sections) {
@@ -62,6 +64,9 @@ const Index = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      {/* Progress Bar */}
+      <ProgressBar />
+      
       {/* Navigation */}
       <Navigation 
         activeSection={activeSection} 
@@ -79,6 +84,7 @@ const Index = () => {
         <ProjectsSection />
         <ExperienceSection />
         <AchievementsSection />
+        <SkillsSection />
         <LibrarySection />
         <ContactSection />
       </motion.main>

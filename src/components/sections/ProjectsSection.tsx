@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Eye } from "lucide-react";
+import { useState } from "react";
 
 const projects = [
   {
@@ -45,6 +46,8 @@ const projects = [
 ];
 
 export const ProjectsSection = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -59,6 +62,9 @@ export const ProjectsSection = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  // Show only first 2 projects initially
+  const displayedProjects = showAllProjects ? projects : projects.slice(0, 2);
 
   return (
     <section id="projects" className="py-20 bg-muted/30">
@@ -85,7 +91,7 @@ export const ProjectsSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="grid md:grid-cols-2 gap-8"
         >
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
@@ -115,8 +121,8 @@ export const ProjectsSection = () => {
                   </motion.a>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {project.tech.slice(0, 3).map((tech) => (
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium"
@@ -124,9 +130,9 @@ export const ProjectsSection = () => {
                         {tech}
                       </span>
                     ))}
-                    {project.tech.length > 3 && (
+                    {project.tech.length > 4 && (
                       <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                        +{project.tech.length - 3}
+                        +{project.tech.length - 4}
                       </span>
                     )}
                   </div>
@@ -138,21 +144,9 @@ export const ProjectsSection = () => {
                 <h3 className="text-xl font-display font-semibold mb-3 group-hover:gradient-text transition-all duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-secondary text-secondary-foreground rounded text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
@@ -166,12 +160,13 @@ export const ProjectsSection = () => {
           className="text-center mt-12"
         >
           <motion.button
+            onClick={() => setShowAllProjects(!showAllProjects)}
             className="button-primary"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <Eye className="w-5 h-5 mr-2" />
-            View All Projects
+            {showAllProjects ? 'Show Less' : 'View All Projects'}
           </motion.button>
         </motion.div>
       </div>

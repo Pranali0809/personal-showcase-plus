@@ -29,48 +29,77 @@ export const AboutSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="grid lg:grid-cols-2 gap-12 items-center"
         >
-          {/* Hero Content */}
+          {/* Hero Content - Updated with Name and Resume Arrow */}
           <motion.div variants={itemVariants} className="space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-6">
               <motion.h1
-                className="text-5xl lg:text-6xl font-display font-bold leading-tight"
+                className="text-6xl lg:text-7xl font-display font-bold leading-tight"
                 variants={itemVariants}
               >
-                Software &{" "}
-                <span className="gradient-text">ML Engineer</span>
+                Pranali Shinde
               </motion.h1>
-              <motion.h2
-                className="text-xl text-muted-foreground font-medium"
+              <motion.div
+                className="flex items-center gap-4"
                 variants={itemVariants}
               >
-                Building Intelligent Systems with Creative Precision
-              </motion.h2>
+                <div className="space-y-2">
+                  <h2 className="text-xl lg:text-2xl gradient-text font-semibold">
+                    Software & ML Engineer
+                  </h2>
+                  <p className="text-lg text-muted-foreground">
+                    Building Intelligent Systems with Creative Precision
+                  </p>
+                </div>
+                
+                {/* Resume Arrow */}
+                <motion.div
+                  className="group relative ml-8"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.button
+                    onClick={() => {
+                      // Resume download/link functionality
+                      console.log('Resume download/view triggered');
+                    }}
+                    className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <svg 
+                      width="24" 
+                      height="24" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      className="transform group-hover:translate-x-1 transition-transform duration-300"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </motion.button>
+                  
+                  {/* Hover tooltip */}
+                  <motion.div
+                    className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card/90 backdrop-blur text-card-foreground px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                  >
+                    Go to Resume
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-card/90"></div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
 
             <motion.p
-              className="text-lg text-muted-foreground leading-relaxed"
+              className="text-lg text-muted-foreground leading-relaxed max-w-2xl"
               variants={itemVariants}
             >
               I'm a software and machine learning engineer who combines technical rigor with creative innovation. 
               Specializing in AI systems, full-stack development, and data-driven solutions, I craft intelligent 
               applications that are both powerful and elegantly designed.
             </motion.p>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap gap-4"
-            >
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button size="lg">
-                  View My Projects
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button variant="accent" size="lg">
-                  Download Resume
-                </Button>
-              </motion.div>
-            </motion.div>
           </motion.div>
 
           {/* Central Visual - Creative Engineer */}
