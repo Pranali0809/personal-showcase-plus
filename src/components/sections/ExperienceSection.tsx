@@ -177,8 +177,9 @@ export const ExperienceSection = () => {
                       {experience.tools.map((tool) => (
                         <span
                           key={tool}
-                          className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium flex items-center gap-1"
                         >
+                          <span className="w-2 h-2 bg-primary rounded-full"></span>
                           {tool}
                         </span>
                       ))}
@@ -257,8 +258,9 @@ export const ExperienceSection = () => {
                   {selectedExperience.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="px-3 py-2 bg-gradient-to-r from-primary/10 to-accent/10 text-foreground rounded-lg text-sm font-medium border border-primary/20"
+                      className="px-3 py-2 bg-gradient-to-r from-primary/10 to-accent/10 text-foreground rounded-lg text-sm font-medium border border-primary/20 flex items-center gap-2"
                     >
+                      <span className="w-2 h-2 bg-primary rounded-full"></span>
                       {tool}
                     </span>
                   ))}

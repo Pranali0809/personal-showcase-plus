@@ -63,7 +63,7 @@ export const ProjectsSection = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  // Show only first 2 projects initially
+  // Show only first 2 projects initially  
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 2);
 
   return (
@@ -159,14 +159,14 @@ export const ProjectsSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <motion.button
+            <motion.button
             onClick={() => setShowAllProjects(!showAllProjects)}
             className="button-primary"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <Eye className="w-5 h-5 mr-2" />
-            {showAllProjects ? 'Show Less' : 'View All Projects'}
+            {showAllProjects ? 'Show Less' : 'Show All Projects'}
           </motion.button>
         </motion.div>
       </div>

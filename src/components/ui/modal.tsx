@@ -48,12 +48,13 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
           
           {/* Modal Content */}
           <motion.div
-            className="relative bg-card border border-card-border rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-card border border-card-border rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden"
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
+            <div className="overflow-y-auto max-h-[90vh] scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
             {/* Close Button */}
             <button
               onClick={onClose}
@@ -63,6 +64,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
             </button>
             
             {children}
+            </div>
           </motion.div>
         </motion.div>
       )}

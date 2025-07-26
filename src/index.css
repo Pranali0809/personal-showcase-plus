@@ -37,11 +37,17 @@
     --input: 45 15% 88%;
     --ring: 215 28% 45%;
 
-    /* Artistic Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    /* Dynamic Theme Gradients - Easily customizable */
+    --theme-gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --theme-gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --theme-gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --theme-gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    
+    /* Legacy support */
+    --gradient-primary: var(--theme-gradient-primary);
+    --gradient-accent: var(--theme-gradient-accent);
+    --gradient-surface: var(--theme-gradient-surface);
+    --gradient-text: var(--theme-gradient-text);
 
     /* Shadows with Artistic Touch */
     --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
@@ -102,11 +108,17 @@
     --input: 215 20% 18%;
     --ring: 215 35% 65%;
 
-    /* Dark Mode Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    /* Dark Mode Dynamic Gradients */
+    --theme-gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --theme-gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --theme-gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --theme-gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    
+    /* Legacy support */
+    --gradient-primary: var(--theme-gradient-primary);
+    --gradient-accent: var(--theme-gradient-accent);
+    --gradient-surface: var(--theme-gradient-surface);
+    --gradient-text: var(--theme-gradient-text);
 
     /* Dark Mode Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);

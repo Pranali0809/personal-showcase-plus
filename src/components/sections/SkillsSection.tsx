@@ -78,7 +78,7 @@ export const SkillsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          className="flex flex-wrap justify-center gap-8"
         >
           {skills.map((skill, index) => {
             const IconComponent = skill.icon;
@@ -86,23 +86,25 @@ export const SkillsSection = () => {
               <motion.div
                 key={skill.name}
                 variants={itemVariants}
-                className="group"
+                className="group relative"
               >
                 <motion.div
-                  className="card-artistic p-6 text-center hover-lift"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className={`w-16 h-16 rounded-full flex items-center justify-center cursor-pointer ${skill.color}`}
+                  whileHover={{ scale: 1.2, rotate: 360 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
                 >
-                  <motion.div
-                    className={`w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center ${skill.color}`}
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                  >
-                    <IconComponent className="w-6 h-6" />
-                  </motion.div>
-                  <h3 className="font-medium text-sm leading-tight group-hover:gradient-text transition-all duration-300">
+                  <IconComponent className="w-8 h-8" />
+                </motion.div>
+                
+                {/* Skill Name - appears on hover */}
+                <motion.div
+                  className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                >
+                  <span className="text-sm font-medium whitespace-nowrap px-2 py-1 bg-card/90 backdrop-blur rounded-lg">
                     {skill.name}
-                  </h3>
+                  </span>
                 </motion.div>
               </motion.div>
             );

@@ -39,7 +39,7 @@ export const AboutSection = () => {
                 Pranali Shinde
               </motion.h1>
               <motion.div
-                className="flex items-center gap-4"
+                className="flex items-center justify-between"
                 variants={itemVariants}
               >
                 <div className="space-y-2">
@@ -51,9 +51,9 @@ export const AboutSection = () => {
                   </p>
                 </div>
                 
-                {/* Resume Arrow */}
+                {/* Resume Arrow - Better positioned */}
                 <motion.div
-                  className="group relative ml-8"
+                  className="group relative"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -62,11 +62,11 @@ export const AboutSection = () => {
                       // Resume download/link functionality
                       console.log('Resume download/view triggered');
                     }}
-                    className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    className="w-14 h-14 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
                   >
                     <svg 
-                      width="24" 
-                      height="24" 
+                      width="20" 
+                      height="20" 
                       viewBox="0 0 24 24" 
                       fill="none" 
                       stroke="currentColor" 
@@ -85,7 +85,7 @@ export const AboutSection = () => {
                     initial={{ opacity: 0, y: 10 }}
                     whileHover={{ opacity: 1, y: 0 }}
                   >
-                    Go to Resume
+                    Resume
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-card/90"></div>
                   </motion.div>
                 </motion.div>
@@ -102,165 +102,92 @@ export const AboutSection = () => {
             </motion.p>
           </motion.div>
 
-          {/* Central Visual - Creative Engineer */}
+          {/* Moving Blobs with User Picture */}
           <motion.div
             variants={itemVariants}
             className="relative flex items-center justify-center"
           >
             <div className="relative w-96 h-96">
-              {/* Central Figure - Abstract Representation */}
+              {/* Background Blob 1 */}
               <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32"
+                className="absolute top-8 left-8 w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 blur-xl"
                 animate={{ 
-                  scale: [1, 1.05, 1],
-                  rotate: [0, 1, 0, -1, 0]
+                  x: [0, 30, -20, 0],
+                  y: [0, -20, 10, 0],
+                  scale: [1, 1.1, 0.9, 1]
                 }}
                 transition={{ 
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut" 
-                }}
-              >
-                {/* Central Core - Brain/Code Fusion */}
-                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/20 via-accent/10 to-primary-glow/20 backdrop-blur-sm border border-primary/20 flex items-center justify-center">
-                  <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center"
-                  >
-                    <Brain className="w-8 h-8 text-white" />
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              {/* Floating Tech Icons */}
-              <motion.div
-                className="absolute top-8 left-8 p-4 rounded-xl bg-card/80 backdrop-blur border border-card-border shadow-lg"
-                animate={{ 
-                  y: [0, -12, 0],
-                  rotate: [-3, 3, -3] 
-                }}
-                transition={{ 
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0
-                }}
-              >
-                <Code2 className="w-6 h-6 text-primary" />
-              </motion.div>
-
-              <motion.div
-                className="absolute top-16 right-8 p-4 rounded-xl bg-card/80 backdrop-blur border border-card-border shadow-lg"
-                animate={{ 
-                  y: [0, 10, 0],
-                  x: [-2, 2, -2]
-                }}
-                transition={{ 
-                  duration: 3.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.8
-                }}
-              >
-                <Database className="w-6 h-6 text-accent" />
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-16 left-12 p-4 rounded-xl bg-card/80 backdrop-blur border border-card-border shadow-lg"
-                animate={{ 
-                  y: [0, -8, 0],
-                  rotate: [2, -2, 2] 
-                }}
-                transition={{ 
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.2
-                }}
-              >
-                <GitBranch className="w-6 h-6 text-primary-glow" />
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-8 right-16 p-4 rounded-xl bg-card/80 backdrop-blur border border-card-border shadow-lg"
-                animate={{ 
-                  y: [0, 12, 0],
-                  x: [0, -3, 0]
-                }}
-                transition={{ 
-                  duration: 4.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.4
-                }}
-              >
-                <Palette className="w-6 h-6 text-accent-glow" />
-              </motion.div>
-
-              {/* Connecting Lines */}
-              <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              >
-                <div className="w-72 h-72 rounded-full border border-primary/20 opacity-60"></div>
-              </motion.div>
-
-              <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                animate={{ rotate: [360, 0] }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              >
-                <div className="w-56 h-56 rounded-full border border-accent/20 opacity-40"></div>
-              </motion.div>
-
-              {/* Ambient Glow */}
-              <motion.div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 blur-2xl"
-                animate={{ 
-                  scale: [1, 1.3, 1],
-                  opacity: [0.3, 0.6, 0.3] 
-                }}
-                transition={{ 
-                  duration: 4,
+                  duration: 8,
                   repeat: Infinity,
                   ease: "easeInOut" 
                 }}
               />
-
-              {/* Sparkle Effects */}
+              
+              {/* Background Blob 2 */}
               <motion.div
-                className="absolute top-20 left-20"
+                className="absolute bottom-8 right-8 w-48 h-48 rounded-full bg-gradient-to-br from-accent/20 to-primary/10 blur-lg"
                 animate={{ 
-                  scale: [0, 1, 0],
-                  opacity: [0, 1, 0] 
+                  x: [0, -25, 15, 0],
+                  y: [0, 15, -25, 0],
+                  scale: [1, 0.8, 1.2, 1]
                 }}
                 transition={{ 
-                  duration: 2,
+                  duration: 6,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: Math.random() * 2
+                  delay: 1
                 }}
-              >
-                <Sparkles className="w-4 h-4 text-primary" />
-              </motion.div>
-
+              />
+              
+              {/* Main Blob with User Picture */}
               <motion.div
-                className="absolute bottom-24 right-20"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72"
                 animate={{ 
-                  scale: [0, 1, 0],
-                  opacity: [0, 1, 0] 
+                  scale: [1, 1.05, 1],
+                  rotate: [0, 2, -2, 0]
                 }}
                 transition={{ 
-                  duration: 2,
+                  duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 2 + 1
+                  ease: "easeInOut" 
                 }}
               >
-                <Sparkles className="w-4 h-4 text-accent" />
+                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-primary-glow/30 backdrop-blur-sm border border-primary/30">
+                  {/* Placeholder for user picture - will be circular */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-primary/50 to-accent/50 border-4 border-white/20 flex items-center justify-center">
+                    <span className="text-white text-xl font-bold">PS</span>
+                  </div>
+                </div>
               </motion.div>
+
+              {/* Smaller floating blobs */}
+              <motion.div
+                className="absolute top-12 right-12 w-16 h-16 rounded-full bg-gradient-to-r from-primary/40 to-accent/40 blur-sm"
+                animate={{ 
+                  scale: [1, 1.3, 1],
+                  opacity: [0.4, 0.8, 0.4] 
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+              />
+              
+              <motion.div
+                className="absolute bottom-12 left-12 w-12 h-12 rounded-full bg-gradient-to-r from-accent/40 to-primary/40 blur-sm"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.7, 0.3] 
+                }}
+                transition={{ 
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1.5
+                }}
+              />
             </div>
           </motion.div>
         </motion.div>

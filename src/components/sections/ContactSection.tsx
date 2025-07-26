@@ -127,16 +127,17 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            {/* Resume Download */}
+            {/* Resume Link */}
             <motion.div variants={itemVariants}>
-              <motion.button
-                className="button-accent flex items-center gap-2"
+              <motion.a
+                href="#"
+                className="button-accent flex items-center gap-2 inline-flex"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Download className="w-5 h-5" />
-                Download Resume
-              </motion.button>
+                Go to Resume
+              </motion.a>
             </motion.div>
           </motion.div>
 
