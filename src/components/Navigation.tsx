@@ -51,12 +51,12 @@ export const Navigation = ({ activeSection, onSectionChange }: NavigationProps) 
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/60 to-accent/60 rounded-full"
                     initial={false}
                     transition={{
                       type: "spring",
-                      stiffness: 400,
-                      damping: 30,
+                      duration: 0.6,
+                      ease: "easeInOut",
                     }}
                   />
                 )}

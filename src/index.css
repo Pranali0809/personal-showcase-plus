@@ -4,43 +4,50 @@
 
 /* Personal Showcase Design System - Professional with Artistic Flair */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Core Color Palette - Sophisticated and Modern */
+    /* Minimal Design Palette - Inspired by Behance Reference */
     --background: 0 0% 99%;
-    --foreground: 220 13% 18%;
+    --foreground: 210 15% 20%;
 
-    /* Artistic Accent Colors */
-    --primary: 259 94% 51%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 259 94% 71%;
+    /* Soft Primary - Muted Blue */
+    --primary: 210 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 70% 65%;
     
-    --secondary: 220 13% 95%;
-    --secondary-foreground: 220 13% 18%;
+    --secondary: 210 10% 95%;
+    --secondary-foreground: 210 15% 20%;
     
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 98%;
-    --accent-glow: 142 76% 56%;
+    /* Subtle Accent - Coral Pink */
+    --accent: 15 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 15 70% 75%;
 
-    /* UI Elements */
+    /* UI Elements - Minimal with soft borders */
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 18%;
-    --card-border: 220 13% 91%;
+    --card-foreground: 210 15% 20%;
+    --card-border: 210 15% 90%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 10% 55%;
     
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 259 94% 51%;
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 210 60% 45%;
 
-    /* Artistic Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    /* Dynamic Theme Gradients - Easily customizable */
+    --theme-gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --theme-gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --theme-gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --theme-gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    
+    /* Legacy support */
+    --gradient-primary: var(--theme-gradient-primary);
+    --gradient-accent: var(--theme-gradient-accent);
+    --gradient-surface: var(--theme-gradient-surface);
+    --gradient-text: var(--theme-gradient-text);
 
     /* Shadows with Artistic Touch */
     --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
@@ -72,39 +79,46 @@
   }
 
   .dark {
-    /* Dark Mode - Sophisticated Night Theme */
-    --background: 220 27% 8%;
-    --foreground: 0 0% 95%;
+    /* Dark Mode - Clean Dark Theme */
+    --background: 210 20% 8%;
+    --foreground: 210 10% 95%;
 
-    /* Artistic Accent Colors - Dark Mode */
-    --primary: 259 94% 61%;
-    --primary-foreground: 220 27% 8%;
-    --primary-glow: 259 94% 81%;
+    /* Dark Mode Primary - Soft Blue */
+    --primary: 210 80% 60%;
+    --primary-foreground: 210 20% 8%;
+    --primary-glow: 210 70% 70%;
     
-    --secondary: 220 27% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 210 20% 12%;
+    --secondary-foreground: 210 10% 95%;
     
-    --accent: 142 76% 46%;
-    --accent-foreground: 220 27% 8%;
-    --accent-glow: 142 76% 66%;
+    /* Dark Mode Accent - Coral Pink */
+    --accent: 15 80% 70%;
+    --accent-foreground: 210 20% 8%;
+    --accent-glow: 15 70% 80%;
 
-    /* UI Elements - Dark Mode */
-    --card: 220 27% 10%;
-    --card-foreground: 0 0% 95%;
-    --card-border: 220 27% 18%;
+    /* UI Elements - Dark Mode with subtle borders */
+    --card: 210 20% 10%;
+    --card-foreground: 210 10% 95%;
+    --card-border: 210 15% 18%;
 
-    --muted: 220 27% 12%;
-    --muted-foreground: 220 9% 65%;
+    --muted: 210 20% 12%;
+    --muted-foreground: 210 8% 65%;
     
-    --border: 220 27% 18%;
-    --input: 220 27% 18%;
-    --ring: 259 94% 61%;
+    --border: 210 15% 18%;
+    --input: 210 15% 18%;
+    --ring: 210 60% 65%;
 
-    /* Dark Mode Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    /* Dark Mode Dynamic Gradients */
+    --theme-gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --theme-gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --theme-gradient-surface: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --theme-gradient-text: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    
+    /* Legacy support */
+    --gradient-primary: var(--theme-gradient-primary);
+    --gradient-accent: var(--theme-gradient-accent);
+    --gradient-surface: var(--theme-gradient-surface);
+    --gradient-text: var(--theme-gradient-text);
 
     /* Dark Mode Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
@@ -128,7 +142,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }
 
@@ -139,7 +153,7 @@
   }
   
   .card-artistic {
-    @apply bg-card border border-card-border rounded-xl shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)];
+    @apply bg-card border border-card-border rounded-2xl shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)];
   }
   
   .button-primary {
@@ -165,6 +179,10 @@
     font-family: 'Playfair Display', serif;
   }
   
+  .font-sans {
+    font-family: 'DM Sans', 'Inter', sans-serif;
+  }
+  
   .font-inter {
     font-family: 'Inter', sans-serif;
   }
@@ -184,6 +202,11 @@
   
   .animate-scale-in {
     animation: scaleIn 0.5s ease-out forwards;
+  }
+  
+  /* Progress Bar Animation */
+  .progress-bar {
+    animation: progressSlide 0.8s ease-out forwards;
   }
   
   /* Interactive Utilities */
@@ -226,5 +249,14 @@
   to { 
     opacity: 1; 
     transform: scale(1); 
+  }
+}
+
+@keyframes progressSlide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width);
   }
 }

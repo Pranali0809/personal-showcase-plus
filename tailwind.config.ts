@@ -14,12 +14,17 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
+				'sm': '640px',
+				'md': '768px',
+				'lg': '1024px',
+				'xl': '1280px',
 				'2xl': '1400px'
 			}
 		},
 		extend: {
 			fontFamily: {
 				'display': ['Playfair Display', 'serif'],
+				'sans': ['DM Sans', 'Inter', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
 			},
 			colors: {
@@ -108,5 +113,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require('tailwind-scrollbar')],
 } satisfies Config;

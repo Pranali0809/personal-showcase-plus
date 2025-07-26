@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Modal } from "@/components/ui/modal";
 
 const experiences = [
   {
@@ -69,10 +70,14 @@ const experiences = [
 ];
 
 export const ExperienceSection = () => {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [selectedExperience, setSelectedExperience] = useState<typeof experiences[0] | null>(null);
 
-  const toggleExpanded = (id: number) => {
-    setExpandedId(expandedId === id ? null : id);
+  const openModal = (experience: typeof experiences[0]) => {
+    setSelectedExperience(experience);
+  };
+
+  const closeModal = () => {
+    setSelectedExperience(null);
   };
 
   const containerVariants = {
@@ -134,7 +139,7 @@ export const ExperienceSection = () => {
               <div className="ml-20">
                 <motion.div
                   className="card-artistic cursor-pointer"
-                  onClick={() => toggleExpanded(experience.id)}
+                  onClick={() => openModal(experience)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -161,12 +166,7 @@ export const ExperienceSection = () => {
                           </span>
                         </div>
                       </div>
-                      <motion.div
-                        animate={{ rotate: expandedId === experience.id ? 90 : 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                      </motion.div>
+                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
                     </div>
 
                     <p className="text-muted-foreground leading-relaxed mb-4">
@@ -177,56 +177,98 @@ export const ExperienceSection = () => {
                       {experience.tools.map((tool) => (
                         <span
                           key={tool}
-                          className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium flex items-center gap-1"
                         >
+                          <span className="w-2 h-2 bg-primary rounded-full"></span>
                           {tool}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  {/* Expanded Content */}
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: expandedId === experience.id ? "auto" : 0,
-                      opacity: expandedId === experience.id ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-6 border-t border-border">
-                      <div className="grid md:grid-cols-2 gap-6 pt-6">
-                        <div>
-                          <h5 className="font-semibold text-foreground mb-3">Key Responsibilities</h5>
-                          <ul className="space-y-2">
-                            {experience.responsibilities.map((responsibility, idx) => (
-                              <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                                {responsibility}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <h5 className="font-semibold text-foreground mb-3">Notable Projects</h5>
-                          <ul className="space-y-2">
-                            {experience.projects.map((project, idx) => (
-                              <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                                <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                                {project}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
                 </motion.div>
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Modal for Experience Details */}
+        <Modal isOpen={!!selectedExperience} onClose={closeModal}>
+          {selectedExperience && (
+            <div className="p-8">
+              <div className="mb-6">
+                <h3 className="text-2xl font-display font-bold text-foreground mb-2">
+                  {selectedExperience.title}
+                </h3>
+                <h4 className="text-xl gradient-text font-semibold mb-3">
+                  {selectedExperience.company}
+                </h4>
+                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {selectedExperience.duration}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MapPin className="w-4 h-4" />
+                    {selectedExperience.location}
+                  </div>
+                  <span className="px-2 py-1 bg-secondary rounded-full text-xs">
+                    {selectedExperience.type}
+                  </span>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {selectedExperience.description}
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h5 className="font-display font-semibold text-lg text-foreground mb-4">
+                    Key Responsibilities
+                  </h5>
+                  <ul className="space-y-3">
+                    {selectedExperience.responsibilities.map((responsibility, idx) => (
+                      <li key={idx} className="text-muted-foreground flex items-start gap-3">
+                        <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                        {responsibility}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5 className="font-display font-semibold text-lg text-foreground mb-4">
+                    Notable Projects
+                  </h5>
+                  <ul className="space-y-3">
+                    {selectedExperience.projects.map((project, idx) => (
+                      <li key={idx} className="text-muted-foreground flex items-start gap-3">
+                        <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        {project}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <h5 className="font-display font-semibold text-lg text-foreground mb-4">
+                  Technologies & Tools
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {selectedExperience.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="px-3 py-2 bg-gradient-to-r from-primary/10 to-accent/10 text-foreground rounded-lg text-sm font-medium border border-primary/20 flex items-center gap-2"
+                    >
+                      <span className="w-2 h-2 bg-primary rounded-full"></span>
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </Modal>
       </div>
     </section>
   );
