@@ -89,7 +89,7 @@ export const ProjectsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 gap-8 mb-12"
         >
           {displayedProjects.map((project) => (
             <motion.div
@@ -157,7 +157,7 @@ export const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-12"
+          className="text-center"
         >
             <motion.button
             onClick={() => setShowAllProjects(!showAllProjects)}

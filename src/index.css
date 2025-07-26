@@ -8,34 +8,34 @@
 
 @layer base {
   :root {
-    /* Core Color Palette - Keep Current Background */
-    --background: 45 29% 97%;
-    --foreground: 215 25% 15%;
+    /* Minimal Design Palette - Inspired by Behance Reference */
+    --background: 0 0% 99%;
+    --foreground: 210 15% 20%;
 
-    /* Vibrant Primary - Clear Soft Blue */
-    --primary: 220 90% 56%;
+    /* Soft Primary - Muted Blue */
+    --primary: 210 80% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 85% 70%;
+    --primary-glow: 210 70% 65%;
     
-    --secondary: 45 20% 93%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 210 10% 95%;
+    --secondary-foreground: 210 15% 20%;
     
-    /* Vibrant Accent - Clear Soft Purple */
-    --accent: 280 85% 60%;
+    /* Subtle Accent - Coral Pink */
+    --accent: 15 80% 65%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 280 80% 75%;
+    --accent-glow: 15 70% 75%;
 
-    /* UI Elements */
-    --card: 45 40% 98%;
-    --card-foreground: 215 25% 15%;
-    --card-border: 45 15% 88%;
+    /* UI Elements - Minimal with soft borders */
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
+    --card-border: 210 15% 90%;
 
-    --muted: 45 25% 94%;
-    --muted-foreground: 215 12% 55%;
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 10% 55%;
     
-    --border: 45 15% 88%;
-    --input: 45 15% 88%;
-    --ring: 215 28% 45%;
+    --border: 210 15% 90%;
+    --input: 210 15% 95%;
+    --ring: 210 60% 45%;
 
     /* Dynamic Theme Gradients - Easily customizable */
     --theme-gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
@@ -79,34 +79,34 @@
   }
 
   .dark {
-    /* Dark Mode - Elegant Charcoal Theme */
-    --background: 215 25% 6%;
-    --foreground: 45 25% 92%;
+    /* Dark Mode - Clean Dark Theme */
+    --background: 210 20% 8%;
+    --foreground: 210 10% 95%;
 
-    /* Dark Mode Primary - Vibrant Blue */
-    --primary: 220 90% 65%;
-    --primary-foreground: 215 25% 6%;
-    --primary-glow: 220 85% 75%;
+    /* Dark Mode Primary - Soft Blue */
+    --primary: 210 80% 60%;
+    --primary-foreground: 210 20% 8%;
+    --primary-glow: 210 70% 70%;
     
-    --secondary: 215 25% 10%;
-    --secondary-foreground: 45 25% 92%;
+    --secondary: 210 20% 12%;
+    --secondary-foreground: 210 10% 95%;
     
-    /* Dark Mode Accent - Vibrant Purple */
-    --accent: 280 85% 70%;
-    --accent-foreground: 215 25% 6%;
-    --accent-glow: 280 80% 80%;
+    /* Dark Mode Accent - Coral Pink */
+    --accent: 15 80% 70%;
+    --accent-foreground: 210 20% 8%;
+    --accent-glow: 15 70% 80%;
 
-    /* UI Elements - Dark Mode */
-    --card: 215 25% 8%;
-    --card-foreground: 45 25% 92%;
-    --card-border: 215 20% 18%;
+    /* UI Elements - Dark Mode with subtle borders */
+    --card: 210 20% 10%;
+    --card-foreground: 210 10% 95%;
+    --card-border: 210 15% 18%;
 
-    --muted: 215 25% 10%;
-    --muted-foreground: 215 8% 65%;
+    --muted: 210 20% 12%;
+    --muted-foreground: 210 8% 65%;
     
-    --border: 215 20% 18%;
-    --input: 215 20% 18%;
-    --ring: 215 35% 65%;
+    --border: 210 15% 18%;
+    --input: 210 15% 18%;
+    --ring: 210 60% 65%;
 
     /* Dark Mode Dynamic Gradients */
     --theme-gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
@@ -153,7 +153,7 @@
   }
   
   .card-artistic {
-    @apply bg-card border border-card-border rounded-xl shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)];
+    @apply bg-card border border-card-border rounded-2xl shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)];
   }
   
   .button-primary {

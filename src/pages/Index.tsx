@@ -13,10 +13,10 @@ import { ContactSection } from "@/components/sections/ContactSection";
 const Index = () => {
   const [activeSection, setActiveSection] = useState('about');
 
-  // Set theme on initial load
+  // Set theme on initial load - default to dark
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (savedTheme === 'dark' || !savedTheme) {
       document.documentElement.classList.add('dark');
     }
   }, []);
