@@ -43,6 +43,26 @@ const projects = [
     githubUrl: "#",
     featured: false,
   },
+  {
+    id: 5,
+    title: "AI-Powered Analytics Platform",
+    description: "Machine learning platform for predictive analytics with automated model training and deployment capabilities.",
+    image: "/api/placeholder/400/300",
+    tech: ["Python", "TensorFlow", "Docker", "AWS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    id: 6,
+    title: "Real-time Chat Application",
+    description: "Scalable chat application with real-time messaging, file sharing, and video calling features.",
+    image: "/api/placeholder/400/300",
+    tech: ["React", "Socket.io", "Node.js", "MongoDB"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
 ];
 
 export const ProjectsSection = () => {

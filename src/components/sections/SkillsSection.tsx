@@ -26,16 +26,16 @@ const PythonIcon = () => (
 );
 
 const skills = [
-  { name: "React", icon: ReactIcon, color: "text-blue-400" },
-  { name: "Google Cloud Platform", icon: Cloud, color: "text-blue-500" },
-  { name: "JavaScript", icon: FileCode, color: "text-yellow-500" },
-  { name: "Python", icon: PythonIcon, color: "text-green-500" },
-  { name: "Apache Airflow", icon: Workflow, color: "text-red-500" },
-  { name: "BigQuery", icon: Database, color: "text-orange-500" },
-  { name: "SQL", icon: Server, color: "text-purple-500" },
-  { name: ".NET", icon: Code2, color: "text-indigo-500" },
-  { name: "MongoDB", icon: Database, color: "text-green-600" },
-  { name: "PostgreSQL", icon: Cpu, color: "text-blue-600" },
+  { name: "React", icon: ReactIcon },
+  { name: "Google Cloud Platform", icon: Cloud },
+  { name: "JavaScript", icon: FileCode },
+  { name: "Python", icon: PythonIcon },
+  { name: "Apache Airflow", icon: Workflow },
+  { name: "BigQuery", icon: Database },
+  { name: "SQL", icon: Server },
+  { name: ".NET", icon: Code2 },
+  { name: "MongoDB", icon: Database },
+  { name: "PostgreSQL", icon: Cpu },
 ];
 
 export const SkillsSection = () => {
@@ -98,7 +98,7 @@ export const SkillsSection = () => {
                 className="group relative"
               >
                 <motion.div
-                  className={`w-16 h-16 rounded-full bg-card border border-border flex items-center justify-center cursor-pointer ${skill.color} hover:bg-card/80 transition-colors`}
+                  className="w-16 h-16 rounded-full bg-card border border-border flex items-center justify-center cursor-pointer text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
                   whileHover={{ scale: 1.1, y: -5 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
@@ -107,10 +107,7 @@ export const SkillsSection = () => {
                 
                 {/* Skill Name - appears on hover */}
                 <motion.div
-                  className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 0, y: 10 }}
-                  whileHover={{ opacity: 1, y: 0 }}
+                  className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-10"
                 >
                   <span className="text-xs font-medium whitespace-nowrap px-3 py-1.5 bg-card border border-border rounded-lg shadow-lg">
                     {skill.name}

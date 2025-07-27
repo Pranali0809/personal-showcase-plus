@@ -12,18 +12,18 @@
     --background: 0 0% 99%;
     --foreground: 210 15% 20%;
 
-    /* Soft Primary - Muted Blue */
-    --primary: 210 80% 50%;
+    /* Primary - Professional Blue */
+    --primary: 210 75% 55%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 210 70% 65%;
     
     --secondary: 210 10% 95%;
     --secondary-foreground: 210 15% 20%;
     
-    /* Subtle Accent - Coral Pink */
-    --accent: 15 80% 65%;
+    /* Accent - Lighter Blue */
+    --accent: 210 60% 70%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 15 70% 75%;
+    --accent-glow: 210 55% 75%;
 
     /* UI Elements - Minimal with soft borders */
     --card: 0 0% 100%;
@@ -83,18 +83,18 @@
     --background: 210 20% 8%;
     --foreground: 210 10% 95%;
 
-    /* Dark Mode Primary - Soft Blue */
-    --primary: 210 80% 60%;
+    /* Dark Mode Primary - Professional Blue */
+    --primary: 210 75% 65%;
     --primary-foreground: 210 20% 8%;
-    --primary-glow: 210 70% 70%;
+    --primary-glow: 210 70% 75%;
     
     --secondary: 210 20% 12%;
     --secondary-foreground: 210 10% 95%;
     
-    /* Dark Mode Accent - Coral Pink */
-    --accent: 15 80% 70%;
+    /* Dark Mode Accent - Lighter Blue */
+    --accent: 210 60% 80%;
     --accent-foreground: 210 20% 8%;
-    --accent-glow: 15 70% 80%;
+    --accent-glow: 210 55% 85%;
 
     /* UI Elements - Dark Mode with subtle borders */
     --card: 210 20% 10%;
