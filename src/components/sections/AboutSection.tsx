@@ -53,12 +53,8 @@ export const AboutSection = () => {
                 </div>
                 
                 {/* Resume Arrow - Better positioned */}
-                <motion.div
-                  className="group relative"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <motion.button
+                <motion.div className="group relative" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  {/* <motion.button
                     onClick={() => {
                       // Resume download/link functionality
                       console.log('Resume download/view triggered');
@@ -79,16 +75,16 @@ export const AboutSection = () => {
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                   </motion.button>
-                  
+                   */}
                   {/* Hover tooltip */}
-                  <motion.div
+                  {/* <motion.div
                     className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card/90 backdrop-blur text-card-foreground px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
                     initial={{ opacity: 0, y: 10 }}
                     whileHover={{ opacity: 1, y: 0 }}
                   >
                     Resume
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-card/90"></div>
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               </motion.div>
             </div>
@@ -104,12 +100,12 @@ export const AboutSection = () => {
           </motion.div>
 
           {/* Pluggable Hero Animation */}
-          <motion.div
+          {/* <motion.div
             variants={itemVariants}
             className="relative flex items-center justify-center"
           >
             <HeroAnimation />
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>
