@@ -8,7 +8,7 @@ export const HeroAnimation = ({ className = "" }: HeroAnimationProps) => {
   return (
     <div className={`relative w-96 h-96 ${className}`}>
       {/* Background Blob 1 */}
-      <motion.div
+      {/* <motion.div
         className="absolute top-8 left-8 w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 blur-xl"
         animate={{ 
           x: [0, 30, -20, 0],
@@ -20,10 +20,10 @@ export const HeroAnimation = ({ className = "" }: HeroAnimationProps) => {
           repeat: Infinity,
           ease: "easeInOut" 
         }}
-      />
+      /> */}
       
       {/* Background Blob 2 */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 right-8 w-48 h-48 rounded-full bg-gradient-to-br from-accent/20 to-primary/10 blur-lg"
         animate={{ 
           x: [0, -25, 15, 0],
@@ -36,7 +36,7 @@ export const HeroAnimation = ({ className = "" }: HeroAnimationProps) => {
           ease: "easeInOut",
           delay: 1
         }}
-      />
+      /> */}
       
       {/* Main Blob with User Picture */}
       <motion.div
@@ -60,7 +60,7 @@ export const HeroAnimation = ({ className = "" }: HeroAnimationProps) => {
       </motion.div>
 
       {/* Smaller floating blobs */}
-      <motion.div
+      {/* <motion.div
         className="absolute top-12 right-12 w-16 h-16 rounded-full bg-gradient-to-r from-primary/40 to-accent/40 blur-sm"
         animate={{ 
           scale: [1, 1.3, 1],
@@ -72,9 +72,9 @@ export const HeroAnimation = ({ className = "" }: HeroAnimationProps) => {
           ease: "easeInOut",
           delay: 0.5
         }}
-      />
+      /> */}
       
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-12 left-12 w-12 h-12 rounded-full bg-gradient-to-r from-accent/40 to-primary/40 blur-sm"
         animate={{ 
           scale: [1, 1.2, 1],
@@ -86,7 +86,7 @@ export const HeroAnimation = ({ className = "" }: HeroAnimationProps) => {
           ease: "easeInOut",
           delay: 1.5
         }}
-      />
+      /> */}
     </div>
   );
 };

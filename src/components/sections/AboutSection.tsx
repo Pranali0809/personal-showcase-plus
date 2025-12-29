@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pranaliPhoto from "@/assets/pranali-photo.jpg";
+import pranaliPhoto from "@/assets/pranali-photo.png";
 
 export const AboutSection = () => {
   const containerVariants = {
@@ -83,7 +83,7 @@ export const AboutSection = () => {
           >
             {/* Animated Blob Background - Large */}
             <motion.div
-              className="absolute w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/40 to-accent/40 blur-xl"
+              className="absolute w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-blue-300/40 to-purple-400/40 blur-xl"
               animate={{
                 scale: [1, 1.1, 1],
                 rotate: [0, 90, 0],
@@ -110,58 +110,22 @@ export const AboutSection = () => {
               }}
             />
 
-            {/* Animated Blob Background - Small Accent */}
-            <motion.div
-              className="absolute -top-4 -right-4 lg:-right-8 w-20 h-20 lg:w-28 lg:h-28 rounded-full bg-gradient-to-r from-primary to-primary-glow opacity-60"
-              animate={{
-                y: [0, -15, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
+          
 
             {/* Photo Container */}
             <motion.div
-              className="relative z-10 w-56 h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-card shadow-2xl"
+              className="relative z-10 w-80 h-80 lg:w-104 lg:h-104 rounded-full overflow-hidden border-4 border-primary shadow-xl bg-white/80"
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 100 }}
             >
               <img
                 src={pranaliPhoto}
                 alt="Pranali Shinde"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-[center_bottom]"
               />
             </motion.div>
 
-            {/* Floating decorative elements */}
-            <motion.div
-              className="absolute bottom-4 -left-4 lg:bottom-8 lg:-left-8 w-12 h-12 lg:w-16 lg:h-16 rounded-lg bg-gradient-to-br from-accent to-accent-glow opacity-80 rotate-12"
-              animate={{
-                rotate: [12, 24, 12],
-                y: [0, -8, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            
-            <motion.div
-              className="absolute -bottom-2 right-8 lg:right-12 w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 border-primary/50"
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
+          
           </motion.div>
         </motion.div>
       </div>

@@ -8,7 +8,7 @@ const projects = [
 		id: 1,
 		title: "CloudOps",
 		description:
-			"A modern, responsive e-commerce platform built with React and Node.js, featuring real-time inventory management and seamless payment integration.",
+			"An agentic cloud operations platform that analyzes live infrastructure data and converts it into actionable cost, security, and performance decisions.",
 		image: "/images/CloudOps.png", // Updated path to the new images folder
 		tech: ["Python", "AWS", "Bedrock", "Dynamo DB", "OpenAI"],
 		liveUrl: "https://www.youtube.com/watch?v=Y7J7wXuzpDU",
@@ -16,14 +16,12 @@ const projects = [
 		featured: true,
 		details: {
 			whatItDoes: [
-				"Provides real-time cloud cost monitoring and optimization recommendations",
-				"Integrates with AWS and GCP services for automated resource management",
-				"Offers interactive dashboards for cost visualization and forecasting",
+				"Monitors AWS cloud resources and detects inefficiencies, misconfigurations, and security risks in real time.",
+				"Provides a unified dashboard for resource insights, alerts, and operational visibility.",
 			],
 			whatIWorkedOn: [
-				"Built the frontend dashboard using React with real-time data visualization",
-				"Implemented AWS Bedrock integration for AI-powered cost insights",
-				"Designed and developed the PostgreSQL database schema for cost tracking",
+				"Integrated AWS services (EC2, S3, DynamoDB, Cost Explorer) using Boto3 for metrics and actions",
+				"Designed and implemented agent-based reasoning workflows using AWS Bedrock and FastAPI.",
 			],
 			challenges: [
 				"Optimized query performance for handling large volumes of cloud cost data",
@@ -35,7 +33,7 @@ const projects = [
 		id: 2,
 		title: "Vaidya.ai",
 		description:
-			"A headless CMS designed for creative professionals, with drag-and-drop portfolio building and advanced media management.",
+			"Vaidya.ai is an AI-powered healthcare platform that enables intelligent pre-appointment assessment and AI-assisted diagnosis with doctors as the human-in-the-loop.",
 		image: "/images/Vaidyai.png", // Updated path to the new images folder
 		tech: ["GCP", "Firestore", "ReactJS", "Agent Development Kit","Python Fast API"],
 		liveUrl: "https://www.youtube.com/watch?v=w5L2xGES9GQ",
@@ -43,14 +41,13 @@ const projects = [
 		featured: true,
 		details: {
 			whatItDoes: [
-				"AI-powered healthcare assistant for preliminary symptom analysis",
+				"Processes doctor–patient conversations using voice transcription and AI-assisted diagnostic reasoning.",
 				"Provides personalized health recommendations based on user input",
-				"Integrates with medical databases for accurate information retrieval",
+				"Collects structured patient history via an AI pre-appointment agent and maintains a longitudinal medical timeline.",
 			],
 			whatIWorkedOn: [
-				"Developed the conversational AI interface using Next.js",
-				"Implemented GraphQL APIs for efficient data fetching",
-				"Built the media management system with Cloudinary integration",
+				"Designed and integrated agentic workflows using Med-LLMs, Whisper, VectorDB (RAG), and MCP-based tool calling.",
+				"Built a full-stack system with FastAPI and Firestore to manage patients, appointments, and AI-generated outputs.",
 			],
 			challenges: [
 				"Ensured HIPAA-compliant data handling practices",
@@ -62,7 +59,7 @@ const projects = [
 		id: 3,
 		title: "Smart Docs",
 		description:
-			"An interactive dashboard for data analysis with custom chart components and real-time data streaming capabilities.",
+			"Built a real-time collaborative document editing platform with conflict-free editing and document-aware AI assistance.",
 		image: "/images/SmartDocs.png", // Updated path to the new images folder
 		tech: [ "GraphQL", "Apollo Server", "Websockets", "ShareDB", "MongoDB","React JS"],
 		liveUrl: "#",
@@ -70,14 +67,14 @@ const projects = [
 		featured: false,
 		details: {
 			whatItDoes: [
-				"Intelligent document processing with AI-powered extraction",
-				"Automated data visualization from unstructured documents",
-				"Real-time collaboration features for team document review",
+				"Enables multiple users to edit the same document simultaneously with live cursor and content updates.",
+				"Allows users to query and chat with the document to get context-aware answers based on its content.",
+				
 			],
 			whatIWorkedOn: [
-				"Built custom D3.js chart components for data visualization",
-				"Implemented WebSocket connections for real-time updates",
-				"Developed the Python backend for document processing",
+				"Implemented real-time collaboration using ShareDB and Operational Transformation (OT) for conflict resolution.",
+				"Designed GraphQL APIs and subscriptions (websockets) for document updates, user presence, and access control.",
+				"Integrated a LangChain-based RAG pipeline with vector search to enable document-grounded conversational querying.",
 			],
 			challenges: [
 				"Handled complex document formats and edge cases",
@@ -89,7 +86,7 @@ const projects = [
 		id: 4,
 		title: "Plan Squad",
 		description:
-			"Vibecoded app to make hangout plans more effecient ",
+			"A collaborative group decision-making app that helps friends vote, plan hangouts, and finalize outings seamlessly in real time.",
 		image: "/images/base44.png", // Updated path to the new images folder
 		tech: ["Vibecoded", "Base44",],
 		liveUrl: "#",
@@ -97,14 +94,13 @@ const projects = [
 		featured: false,
 		details: {
 			whatItDoes: [
-				"Tracks workouts, nutrition, and fitness progress over time",
-				"Provides AI-powered personalized workout recommendations",
-				"Includes social features for community engagement and challenges",
+				"Enables groups to vote on restaurants, movies, or activities within shared sessions.",
+				"Aggregates votes to show ranked results with clear visual cues (gold, silver, bronze)",
+				"Converts finalized results into planned hangouts with invitations and memories.",
 			],
 			whatIWorkedOn: [
-				"Developed the cross-platform mobile UI with React Native",
-				"Integrated TensorFlow for workout form analysis",
-				"Built the real-time sync system with Firebase",
+				"[Vibecoded]",
+
 			],
 			challenges: [
 				"Optimized TensorFlow models for mobile performance",
@@ -114,9 +110,9 @@ const projects = [
 	},
 	{
 		id: 5,
-		title: "AI-Powered Analytics Platform",
+		title: "Hiring Automation Platform",
 		description:
-			"Machine learning platform for predictive analytics with automated model training and deployment capabilities.",
+			"Built an automated pipeline using Zapier to extract hiring and internship opportunities from Instagram Reel transcripts and convert them into a structured, trackable dataset.",
 		image: "/images/Zapier.png", // Updated path to the new images folder
 		tech: ["Automation", "Zapier", "Supadata", "OpenAI"],
 		liveUrl: "#",
@@ -124,14 +120,12 @@ const projects = [
 		featured: false,
 		details: {
 			whatItDoes: [
-				"Automates ML model training and deployment pipelines",
-				"Provides predictive analytics for business decision-making",
-				"Offers customizable dashboards for model performance monitoring",
+				"Automatically processes Instagram Reel transcripts to identify companies, roles, and hiring programs.",
+				"Structures unorganized video content into tabular data with deadlines, links, and opportunity details.",
 			],
 			whatIWorkedOn: [
-				"Built the automated ML pipeline with Python and TensorFlow",
-				"Containerized the platform using Docker for scalability",
-				"Deployed and managed infrastructure on AWS",
+				"Designed a multi-step Zapier workflow with AI-based information extraction using OpenAI API and indexed looping over results.",
+				"Integrated third-party transcription output USING Supadata API with AI parsing and Google Sheets as a persistence layer.",
 			],
 			challenges: [
 				"Designed efficient data pipelines for large-scale datasets",
@@ -317,7 +311,7 @@ export const ProjectsSection = () => {
 									</ul>
 								</div>
 
-								{/* Challenges & Outcomes */}
+								{/* Challenges & Outcomes
 								<div>
 									<h4 className="font-semibold text-lg mb-3">Challenges & Outcomes</h4>
 									<ul className="space-y-2">
@@ -328,7 +322,7 @@ export const ProjectsSection = () => {
 											</li>
 										))}
 									</ul>
-								</div>
+								</div> */}
 
 								{/* Action Buttons */}
 								<div className="flex gap-4 pt-4">
