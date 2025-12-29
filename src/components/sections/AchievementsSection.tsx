@@ -101,7 +101,7 @@ export const AchievementsSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          className="flex flex-wrap justify-center gap-6"
         >
           {displayedAchievements.map((achievement) => {
             const IconComponent = achievement.icon;
@@ -109,7 +109,7 @@ export const AchievementsSection = () => {
               <motion.div
                 key={achievement.id}
                 variants={itemVariants}
-                className="card-artistic p-6 hover-lift group"
+                className="card-artistic p-6 hover-lift group max-w-md"
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="flex items-start gap-4 mb-4">
