@@ -94,12 +94,12 @@ export const AboutSection = () => {
             </div>
 
             <motion.p
-              className="text-lg text-muted-foreground leading-relaxed max-w-2xl"
+              className="text-lg text-muted-foreground leading-relaxed max-w-2xl font-inter"
               variants={itemVariants}
             >
-              I'm a software and machine learning engineer who combines technical rigor with creative innovation. 
-              Specializing in AI systems, full-stack development, and data-driven solutions, I craft intelligent 
-              applications that are both powerful and elegantly designed.
+              I enjoy building thoughtful software, exploring ML and AI systems, and understanding how 
+              infrastructure shapes intelligent products. Curious by nature, I like turning ideas into 
+              systems that scale — and learning something new along the way.
             </motion.p>
           </motion.div>
 
