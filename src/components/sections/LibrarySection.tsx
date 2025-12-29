@@ -2,47 +2,47 @@ import { motion } from "framer-motion";
 import { BookOpen, ExternalLink, Heart } from "lucide-react";
 
 const libraryItems = [
-  {
-    id: 1,
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    type: "book",
-    category: "Software Engineering",
-    description: "A handbook of agile software craftsmanship that changed how I approach code quality and maintainability.",
-    rating: 5,
-    favorite: true,
-    url: "#"
-  },
-  {
-    id: 2,
-    title: "The Psychology of Web Design",
-    author: "Don Norman",
-    type: "article",
-    category: "UX Design",
-    description: "Insightful piece on how users interact with digital interfaces and the psychology behind great UX decisions.",
-    rating: 5,
-    favorite: true,
-    url: "#"
-  },
+  // {
+  //   id: 1,
+  //   title: "Clean Code",
+  //   author: "Robert C. Martin",
+  //   type: "book",
+  //   category: "Software Engineering",
+  //   description: "A handbook of agile software craftsmanship that changed how I approach code quality and maintainability.",
+  //   rating: 5,
+  //   favorite: true,
+  //   url: "#"
+  // },
+  // {
+  //   id: 2,
+  //   title: "The Psychology of Web Design",
+  //   author: "Don Norman",
+  //   type: "article",
+  //   category: "UX Design",
+  //   description: "Insightful piece on how users interact with digital interfaces and the psychology behind great UX decisions.",
+  //   rating: 5,
+  //   favorite: true,
+  //   url: "#"
+  // },
   {
     id: 3,
-    title: "System Design Interview",
-    author: "Alex Xu",
+    title: "Designing Data-Intensive Applications",
+    author: "Martin Kleppmann",
     type: "book",
     category: "System Architecture",
     description: "Essential guide for understanding large-scale system design patterns and distributed architecture principles.",
-    rating: 4,
-    favorite: false,
+    rating: 5,
+    favorite: true,
     url: "#"
   },
   {
     id: 4,
-    title: "The Art of Readable Code",
-    author: "Dustin Boswell",
+    title: "Designing Ml systems",
+    author: "Chip Huyen",
     type: "book",
-    category: "Programming",
+    category: "Design Systems",
     description: "Practical techniques for writing code that's not just functional, but genuinely enjoyable to read and maintain.",
-    rating: 5,
+    rating: 4,
     favorite: true,
     url: "#"
   },
@@ -59,7 +59,7 @@ const libraryItems = [
   },
   {
     id: 6,
-    title: "Atomic Design",
+    title: "System Design Primer",
     author: "Brad Frost",
     type: "methodology",
     category: "Design Systems",

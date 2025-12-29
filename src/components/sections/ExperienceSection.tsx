@@ -6,14 +6,14 @@ import { Modal } from "@/components/ui/modal";
 const experiences = [
   {
     id: 1,
-    title: "Senior Full-Stack Developer",
-    company: "TechFlow Solutions",
-    location: "San Francisco, CA",
-    duration: "2022 - Present",
+    title: "Machine Learning Engineer",
+    company: "General Mills",
+    location: "Mumbai, IN",
+    duration: "2024 - Present",
     type: "Full-time",
     description: "Leading development of scalable web applications and mentoring junior developers in modern development practices.",
     responsibilities: [
-      "Architected and developed 5+ enterprise-level applications using React, Node.js, and PostgreSQL",
+      "Designed, implemented, and maintained Apache Airflow DAGs for end-to-end orchestration of data ingestion, validation, ML inference, and optimization workflows.",
       "Led a team of 4 developers in agile development practices",
       "Implemented CI/CD pipelines reducing deployment time by 60%",
       "Mentored junior developers and conducted code reviews"
@@ -23,50 +23,9 @@ const experiences = [
       "Microservices Migration - Improved system scalability by 300%",
       "Real-time Analytics Dashboard - Used by 10,000+ daily active users"
     ],
-    tools: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "GraphQL"]
+    tools: ["GCP", "Python", "SQL", "Airflow", "Github Actions", "Agent Development Kit", "Langchain"]
   },
-  {
-    id: 2,
-    title: "Full-Stack Developer",
-    company: "Digital Innovations Inc",
-    location: "Austin, TX",
-    duration: "2020 - 2022",
-    type: "Full-time",
-    description: "Developed and maintained multiple client-facing applications with focus on performance optimization and user experience.",
-    responsibilities: [
-      "Built responsive web applications serving 50,000+ monthly users",
-      "Optimized application performance resulting in 50% faster load times",
-      "Collaborated with design team to implement pixel-perfect UIs",
-      "Maintained legacy codebases while implementing modern solutions"
-    ],
-    projects: [
-      "E-commerce Platform - $2M+ in annual transactions",
-      "Content Management System - Used by 100+ content creators",
-      "Mobile-first Web App - 95% mobile user satisfaction rate"
-    ],
-    tools: ["Vue.js", "Express.js", "MongoDB", "Firebase", "Sass", "Jest"]
-  },
-  {
-    id: 3,
-    title: "Frontend Developer",
-    company: "Creative Web Studio",
-    location: "Remote",
-    duration: "2019 - 2020",
-    type: "Contract",
-    description: "Specialized in creating visually stunning and highly interactive web experiences for creative agencies and startups.",
-    responsibilities: [
-      "Created custom animations and interactions using GSAP and CSS",
-      "Collaborated with designers to bring creative concepts to life",
-      "Ensured cross-browser compatibility and accessibility standards",
-      "Delivered projects on time with 100% client satisfaction rate"
-    ],
-    projects: [
-      "Award-winning Agency Portfolio - Featured in CSS Design Awards",
-      "Interactive Product Showcase - 200% increase in conversion rate",
-      "Artist Portfolio Platform - Used by 500+ creative professionals"
-    ],
-    tools: ["JavaScript", "GSAP", "Webpack", "Figma", "Adobe Creative Suite"]
-  }
+
 ];
 
 export const ExperienceSection = () => {

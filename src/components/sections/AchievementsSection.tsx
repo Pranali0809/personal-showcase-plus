@@ -3,33 +3,33 @@ import { Award, Trophy, Star, Target } from "lucide-react";
 import { useState } from "react";
 
 const achievements = [
-  {
-    id: 1,
-    title: "Best Developer Award 2023",
-    organization: "TechFlow Solutions",
-    date: "December 2023",
-    description: "Recognized for outstanding technical leadership and innovative solutions that increased team productivity by 40%",
-    icon: Award,
-    type: "award"
-  },
-  {
-    id: 2,
-    title: "Open Source Contributor",
-    organization: "React Community",
-    date: "2022 - Present",
-    description: "Active contributor to React ecosystem with 500+ GitHub stars and multiple featured repositories",
-    icon: Star,
-    type: "contribution"
-  },
-  {
-    id: 3,
-    title: "Project Excellence Recognition",
-    organization: "Digital Innovations Inc",
-    date: "June 2022",
-    description: "Led successful delivery of enterprise platform serving 50,000+ users with 99.9% uptime",
-    icon: Trophy,
-    type: "achievement"
-  },
+  // {
+  //   id: 1,
+  //   title: "Best Developer Award 2023",
+  //   organization: "TechFlow Solutions",
+  //   date: "December 2023",
+  //   description: "Recognized for outstanding technical leadership and innovative solutions that increased team productivity by 40%",
+  //   icon: Award,
+  //   type: "award"
+  // },
+  // {
+  //   id: 2,
+  //   title: "Open Source Contributor",
+  //   organization: "React Community",
+  //   date: "2022 - Present",
+  //   description: "Active contributor to React ecosystem with 500+ GitHub stars and multiple featured repositories",
+  //   icon: Star,
+  //   type: "contribution"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Project Excellence Recognition",
+  //   organization: "Digital Innovations Inc",
+  //   date: "June 2022",
+  //   description: "Led successful delivery of enterprise platform serving 50,000+ users with 99.9% uptime",
+  //   icon: Trophy,
+  //   type: "achievement"
+  // },
   {
     id: 4,
     title: "Certified AWS Solutions Architect",

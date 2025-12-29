@@ -4,25 +4,25 @@ import { Mail, Github, Linkedin, Twitter, Download, Send } from "lucide-react";
 const socialLinks = [
   {
     name: "Email",
-    url: "mailto:hello@example.com",
+    url: "mailto:pranali0809shinde@gmail.com",
     icon: Mail,
-    color: "hover:text-red-500"
+    color: "hover:text-blue-500"
   },
   {
     name: "GitHub",
-    url: "https://github.com",
+    url: "https://github.com/Pranali0809",
     icon: Github,
     color: "hover:text-gray-700 dark:hover:text-gray-300"
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com",
+    url: "https://www.linkedin.com/in/pranali-shinde-59804921b",
     icon: Linkedin,
     color: "hover:text-blue-600"
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com",
+    name: "X",
+    url: "https://x.com/PranaliShi56844",
     icon: Twitter,
     color: "hover:text-blue-400"
   }
@@ -142,7 +142,7 @@ export const ContactSection = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div variants={itemVariants} className="card-artistic p-8">
+          {/* <motion.div variants={itemVariants} className="card-artistic p-8">
             <h3 className="text-xl font-display font-semibold mb-6">
               Send a Message
             </h3>
@@ -218,7 +218,7 @@ export const ContactSection = () => {
                 Send Message
               </motion.button>
             </form>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

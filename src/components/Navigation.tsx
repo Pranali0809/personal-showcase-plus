@@ -30,7 +30,7 @@ export const Navigation = ({ activeSection, onSectionChange }: NavigationProps) 
             whileHover={{ scale: 1.05 }}
             className="font-display text-2xl font-bold gradient-text"
           >
-            Portfolio
+            Pranali Shinde
           </motion.div>
 
           {/* Navigation Links */}

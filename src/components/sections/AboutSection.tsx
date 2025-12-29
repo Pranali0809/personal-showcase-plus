@@ -45,7 +45,7 @@ export const AboutSection = () => {
               >
                 <div className="space-y-2">
                   <h2 className="text-xl lg:text-2xl gradient-text font-semibold">
-                    Software & ML Engineer
+                    Machine Learning Engineer
                   </h2>
                   <p className="text-lg text-muted-foreground">
                     Building Intelligent Systems with Creative Precision
