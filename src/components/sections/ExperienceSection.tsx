@@ -13,15 +13,15 @@ const experiences = [
     type: "Full-time",
     description: "Leading development of scalable web applications and mentoring junior developers in modern development practices.",
     responsibilities: [
-      "Designed, implemented, and maintained Apache Airflow DAGs for end-to-end orchestration of data ingestion, validation, ML inference, and optimization workflows.",
-      "Led a team of 4 developers in agile development practices",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
-      "Mentored junior developers and conducted code reviews"
+      "Designed, implemented, and maintained Apache Airflow DAGs for end-to-end orchestration of MLOps.",
+      "Owned pipeline reliability and observability, handling retries, backfills, SLA monitoring, failure analysis, and production incident debugging.",
+      "Built a containerized optimizer execution framework using Kubeflow, enabling scalablity",
+      "Mentored interns and conducted code reviews"
     ],
     projects: [
-      "Customer Portal Redesign - 40% increase in user engagement",
-      "Microservices Migration - Improved system scalability by 300%",
-      "Real-time Analytics Dashboard - Used by 10,000+ daily active users"
+      "Demand Forecasting - Worked on time series model to forecast demand volume",
+      "Logistic Optimization - Worked on mathematical optimization models using Gurobi and ML-driven workflows to solve large-scale operational planning problems",
+      "Infra AI - Led a POC for cloud infrastructure optimization on GCP, using agent-based analysis of resource metrics to generate cost, performance, and security recommendations."
     ],
     tools: ["GCP", "Python", "SQL", "Airflow", "Github Actions", "Agent Development Kit", "Langchain"]
   },
