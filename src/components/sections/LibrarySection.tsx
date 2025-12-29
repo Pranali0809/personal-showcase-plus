@@ -30,44 +30,44 @@ const libraryItems = [
     author: "Martin Kleppmann",
     type: "book",
     category: "System Architecture",
-    description: "Essential guide for understanding large-scale system design patterns and distributed architecture principles.",
+    description: "A comprehensive guide to building reliable, scalable, and maintainable modern data systems by understanding core principles, trade-offs, and internals of databases and distributed architectures.",
     rating: 5,
     favorite: true,
-    url: "#"
+    url: "https://www.amazon.in/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/9352135245/ref=sr_1_3?crid=2XZVI8BQHBE2L&dib=eyJ2IjoiMSJ9.vrojjSF4i53tznqO9RIEQ9YmEK3CaVBm8Id_g_zTh38raI31DxqmNnGn2AqYlgKv-CLXcnBJ74HXMpZfgndlPj-ZQLyp6e5n6RGMoVfOhrtIIRFexgkQk3sFzHGBEKpTulrZANiGW2wlE5VyHKCIA8B3sNhL4h0HDVJ3JD9m_4JzA5c1kv_GUn6pjU1722MqMxZQI8seC-mG4uj1N-t8KojUIEx8USqAG72mmE5Ju9M.Dt8fmLRF-nVxvF92UWyQVn8ZtaNQlUvqL5TXbDT9upo&dib_tag=se&keywords=designing+data-intensive+applications&qid=1767014061&s=books&sprefix=desig%2Cstripbooks%2C398&sr=1-3"
   },
   {
     id: 4,
     title: "Designing Ml systems",
     author: "Chip Huyen",
     type: "book",
-    category: "Design Systems",
-    description: "Practical techniques for writing code that's not just functional, but genuinely enjoyable to read and maintain.",
+    category: "Machine Learning",
+    description: "A practical guide to designing and deploying production-ready machine learning systems with a holistic, iterative approach.",
     rating: 4,
     favorite: true,
-    url: "#"
+    url: "https://www.amazon.in/Designing-Machine-Learning-Systems-Production-Ready/dp/9355422679"
   },
   {
     id: 5,
-    title: "React Performance Optimization",
-    author: "Kent C. Dodds",
+    title: "System Design Primer",
+    author: "donne martin",
     type: "article",
-    category: "Frontend",
-    description: "Comprehensive guide to optimizing React applications for better performance and user experience.",
+    category: "System Design",
+    description: "Comprehensive guide to system design principles and scalable architecture.",
     rating: 4,
     favorite: false,
-    url: "#"
+    url: "https://github.com/donnemartin/system-design-primer"
   },
-  {
-    id: 6,
-    title: "System Design Primer",
-    author: "Brad Frost",
-    type: "methodology",
-    category: "Design Systems",
-    description: "Revolutionary approach to creating design systems that scale from small components to complete interfaces.",
-    rating: 5,
-    favorite: true,
-    url: "#"
-  }
+  // {
+  //   id: 6,
+  //   title: "System Design Primer",
+  //   author: "Brad Frost",
+  //   type: "methodology",
+  //   category: "Design Systems",
+  //   description: "Revolutionary approach to creating design systems that scale from small components to complete interfaces.",
+  //   rating: 5,
+  //   favorite: true,
+  //   url: "#"
+  // }
 ];
 
 const typeColors = {

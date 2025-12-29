@@ -32,19 +32,18 @@ const achievements = [
   // },
   {
     id: 4,
-    title: "Certified AWS Solutions Architect",
-    organization: "Amazon Web Services",
-    date: "March 2022",
-    description: "Professional certification demonstrating expertise in designing distributed systems on AWS",
+    title: "IEEE Publication",
+    date: "2023",
+    description: "The Quest for Fairness: A Comparative Study of Accuracy in AI Hiring Systems",
     icon: Target,
     type: "certification"
   },
   {
     id: 5,
     title: "Hackathon Winner",
-    organization: "TechCrunch Disrupt",
-    date: "September 2021",
-    description: "First place winner for innovative AI-powered developer tool that reduces debugging time by 60%",
+    organization: "Hackniche",
+    date: "2023",
+    description: "Secured the 1st Runner up prize in Hackniche hackathon with over 80+ Teams as participants",
     icon: Trophy,
     type: "competition"
   }

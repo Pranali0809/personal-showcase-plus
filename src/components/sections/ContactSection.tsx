@@ -88,8 +88,8 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:hello@example.com" className="text-primary hover:text-primary/80 transition-colors">
-                      hello@example.com
+                    <a href="mailto:pranali0809shinde@gmail.com" className="text-primary hover:text-primary/80 transition-colors">
+                      pranali0809shinde@gmail.com
                     </a>
                   </div>
                 </div>
