@@ -237,9 +237,10 @@ export const ProjectsSection = () => {
 
 							{/* Project Content */}
 							<div className="p-6">
-								<h3 className="text-xl font-display font-semibold mb-3 group-hover:gradient-text transition-all duration-300">
-									{project.title}
-								</h3>
+								<h3 className="project-title text-xl font-display font-semibold mb-3">
+  {project.title}
+</h3>
+
 								<p className="text-muted-foreground leading-relaxed">
 									{project.description}
 								</p>

@@ -130,13 +130,13 @@ export const ContactSection = () => {
             {/* Resume Link */}
             <motion.div variants={itemVariants}>
               <motion.a
-                href="#"
+                href="https://drive.google.com/file/d/1TpbRdwW_lhj6qF5AvVTzYGBeWTtIpTqt/view?usp=sharing"
                 className="button-accent flex items-center gap-2 inline-flex"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Download className="w-5 h-5" />
-                Go to Resume
+                {/* <Download className="w-5 h-5" /> */}
+                Resume
               </motion.a>
             </motion.div>
           </motion.div>
