@@ -167,7 +167,7 @@ export const ProjectsSection = () => {
 						Featured <span className="gradient-text">Projects</span>
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						A showcase of my recent work, highlighting technical expertise and creative problem-solving
+						A few things I’ve built, some practical, some curious, all thoughtfully engineered
 					</p>
 				</motion.div>
 

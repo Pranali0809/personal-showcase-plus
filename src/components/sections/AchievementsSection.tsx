@@ -89,10 +89,10 @@ export const AchievementsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">
-            Key <span className="gradient-text">Achievements</span>
+            Certifications / <span className="gradient-text">Achievements</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Milestones and recognitions that showcase growth, impact, and commitment to excellence
+            Formal milestones, informal lessons, and everything that pushed me forward
           </p>
         </motion.div>
 

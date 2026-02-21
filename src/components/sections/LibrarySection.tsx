@@ -117,7 +117,7 @@ export const LibrarySection = () => {
             Knowledge <span className="gradient-text">Library</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A curated collection of books, articles, and resources that have shaped my perspective and skills
+            Books and ideas that quietly shaped how I think about systems
           </p>
         </motion.div>
 

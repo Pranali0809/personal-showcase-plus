@@ -68,7 +68,7 @@ export const ExperienceSection = () => {
             Professional <span className="gradient-text">Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A timeline of growth, learning, and impactful contributions across diverse projects and teams
+            A path shaped by systems, experiments, and a lot of learning in between
           </p>
         </motion.div>
 

@@ -229,3 +229,26 @@
   from { width: 0%; }
   to { width: var(--progress-width); }
 }
+
+.blob {
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.35),
+    rgba(6, 182, 212, 0.25)
+  );
+  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  animation: blobMorph 10s ease-in-out infinite;
+  filter: blur(18px);
+}
+
+@keyframes blobMorph {
+  0% {
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+  50% {
+    border-radius: 58% 42% 37% 63% / 59% 56% 44% 41%;
+  }
+  100% {
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+  }
+}
