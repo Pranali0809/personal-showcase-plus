@@ -79,64 +79,65 @@ export const AchievementsSection = () => {
   const displayedAchievements = showAllAchievements ? achievements : achievements;
 
   return (
-    <section id="achievements" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl lg:text-5xl font-display font-bold mb-4">
-            Certifications / <span className="gradient-text">Achievements</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Formal milestones, informal lessons, and everything that pushed me forward
-          </p>
-        </motion.div>
+    <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  className="flex flex-wrap items-start justify-center gap-12"
+>
+  {/* GCP ACE Badge */}
+  <a
+    href="https://www.credly.com/badges/dd40c098-0937-48ed-89a2-1db0e69d1023/linked_in?t=ta2t3a"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group flex flex-col items-center"
+  >
+    <div className="w-28 h-28 rounded-full bg-muted flex items-center justify-center shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
+      <img
+        src="images/associate-cloud-engineer-certification.png"
+        alt="Google Cloud Associate Cloud Engineer"
+        className="w30 h-30 object-contain"
+      />
+    </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-wrap justify-center gap-6"
-        >
-          {displayedAchievements.map((achievement) => {
-            const IconComponent = achievement.icon;
-            return (
-              <motion.div
-                key={achievement.id}
-                variants={itemVariants}
-                className="card-artistic p-6 hover-lift group max-w-md"
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 group-hover:from-primary/20 group-hover:to-accent/20 transition-colors ${iconColors[achievement.type]}`}>
-                    <IconComponent className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-display font-semibold text-lg mb-1 group-hover:gradient-text transition-all duration-300">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-sm font-medium text-primary mb-1">
-                      {achievement.organization}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {achievement.date}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  {achievement.description}
-                </p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+    <p className="text-muted-foreground leading-relaxed mt-auto">
+      Google Cloud ACE
+    </p>
+  </a>
 
-      </div>
-    </section>
+  {/* Achievement Cards */}
+  {displayedAchievements.map((achievement) => {
+    const IconComponent = achievement.icon;
+    return (
+      <motion.div
+        key={achievement.id}
+        variants={itemVariants}
+        className="card-artistic p-6 hover-lift group max-w-md h-full flex flex-col"
+        whileHover={{ scale: 1.02 }}
+      >
+        <div className="flex items-start gap-4 mb-4">
+          <div className={`p-3 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 group-hover:from-primary/20 group-hover:to-accent/20 transition-colors ${iconColors[achievement.type]}`}>
+            <IconComponent className="w-6 h-6" />
+          </div>
+          <div className="flex-1">
+            <h3 className="font-display font-semibold text-lg mb-1 group-hover:gradient-text transition-all duration-300">
+              {achievement.title}
+            </h3>
+            <p className="text-sm font-medium text-primary mb-1">
+              {achievement.organization}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {achievement.date}
+            </p>
+          </div>
+        </div>
+        <p className="text-muted-foreground leading-relaxed mt-auto">
+          {achievement.description}
+        </p>
+      </motion.div>
+    );
+  })}
+</motion.div>
   );
 };
