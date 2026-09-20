@@ -1,110 +1,57 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Navigation } from "@/components/Navigation";
-import { ProgressBar } from "@/components/ProgressBar";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
-import { ExperienceSection } from "@/components/sections/ExperienceSection";
-import { AchievementsSection } from "@/components/sections/AchievementsSection";
-import { SkillsSection } from "@/components/sections/SkillsSection";
-import { LibrarySection } from "@/components/sections/LibrarySection";
-import { ContactSection } from "@/components/sections/ContactSection";
+import { useEffect } from "react";
+import { Dock } from "@/components/site/Dock";
+import { Hero } from "@/components/site/Hero";
+import { Experience } from "@/components/site/Experience";
+import { Work } from "@/components/site/Work";
+import { Skills } from "@/components/site/Skills";
+import { Achievements } from "@/components/site/Achievements";
+import { Shelf } from "@/components/site/Shelf";
+import { Contact } from "@/components/site/Contact";
+import { Seam } from "@/components/site/Wave";
 
+const CREAM = "var(--color-cream)";
+const NIGHT = "var(--color-night)";
+const GRASS = "var(--color-grass)";
+
+/**
+ * Band order and the scalloped seams between them. Each Seam is painted in
+ * the colour of the band above and filled with the colour of the band below.
+ */
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('about');
-
-  // Set theme on initial load - default to dark
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || !savedTheme) {
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  // Handle smooth scrolling to sections
-  const handleSectionChange = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-    setActiveSection(sectionId);
-  };
-
-  // Update active section based on scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'projects', 'experience', 'achievements', 'skills', 'library', 'contact'];
-      const scrollY = window.scrollY + 100; // Offset for navigation height
-
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollY >= offsetTop && scrollY < offsetTop + offsetHeight) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.documentElement.classList.remove("dark");
   }, []);
 
   return (
-    <motion.div 
-      className="min-h-screen bg-background"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      {/* Progress Bar */}
-      <ProgressBar />
-      
-      {/* Navigation */}
-      <Navigation 
-        activeSection={activeSection} 
-        onSectionChange={handleSectionChange} 
-      />
+    <div style={{ background: CREAM }}>
+      <Dock />
+      <main>
+        {/* cream — name, about, photo */}
+        <Hero />
+        {/* cream — what I work on */}
+        <Experience />
 
-      {/* Main Content */}
-      <motion.main 
-        className="pt-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-      >
-        <AboutSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <AchievementsSection />
-        <SkillsSection />
-        <LibrarySection />
-        <ContactSection />
-      </motion.main>
+        <Seam from={CREAM} to={NIGHT} />
+        {/* night — horizontal reel, tint shifts per project */}
+        <Work />
 
-      {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="bg-card border-t border-border py-8"
-      >
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Software & ML Engineer Portfolio. Crafted with{" "}
-            <span className="text-red-500">♥</span> using React & Framer Motion
-          </p>
-        </div>
-      </motion.footer>
-    </motion.div>
+        <Seam from={NIGHT} to={CREAM} />
+        {/* cream — toolbox */}
+        <Skills />
+
+        <Seam from={CREAM} to={GRASS} />
+        {/* grass — podium stack */}
+        <Achievements />
+
+        <Seam from={GRASS} to={CREAM} />
+        {/* cream — reading list */}
+        <Shelf />
+
+        <Seam from={CREAM} to={NIGHT} />
+        {/* night — contact, then the sun footer */}
+        <Contact />
+      </main>
+    </div>
   );
 };
 

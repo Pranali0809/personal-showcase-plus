@@ -1,109 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Personal Showcase Design System - Professional, Calm, and Modern */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
+/* ============================================================
+   Pranali Shinde — portfolio
+   Palette, type and motion modelled on the reference build:
+   cream ground, white "pillow" blocks, ink text, spot accents.
+   ============================================================ */
 
 @layer base {
   :root {
-    /* Background & Foreground */
-    --background: 0 0% 99%;
-    --foreground: 210 15% 20%;
+    /* ---- Palette ---- */
+    --color-cream: #f5f1e4;
+    --color-sandstone: #e0dbce;
+    --color-white: #fff;
+    --color-ink: #2c2e2a;
+    --color-night: #1e201b;
+    --color-night-soft: #2e312b;
+    --color-stone: #80827f;
+    --color-fog: #a3a69e;
+    --color-coral: #ff705d;
+    --color-grass: #8ed462;
+    --color-grass-deep: #6cb944;
+    --color-sun: #f5e211;
+    --color-sky: #2ba0ff;
 
-    /* Primary - Professional Blue */
-    --primary: 210 75% 55%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 70% 65%;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
 
-    /* Secondary Surfaces */
-    --secondary: 210 10% 95%;
-    --secondary-foreground: 210 15% 20%;
-
-    /* Accent - Soft Sage (calmer than blue) */
-    --accent: 155 35% 60%;
-    --accent-foreground: 0 0% 100%;
-    --accent-glow: 155 35% 68%;
-
-    /* Cards & UI */
+    /* ---- shadcn bridge, so dialogs inherit the same palette ---- */
+    --background: 48 39% 93%;
+    --foreground: 80 5% 17%;
     --card: 0 0% 100%;
-    --card-foreground: 210 15% 20%;
-    --card-border: 210 15% 90%;
-
-    --muted: 210 10% 96%;
-    --muted-foreground: 210 10% 55%;
-
-    --border: 210 15% 90%;
-    --input: 210 15% 95%;
-    --ring: 210 60% 45%;
-
-    /* Gradients */
-    --theme-gradient-primary: linear-gradient(
-      135deg,
-      hsl(var(--primary)),
-      hsl(var(--primary-glow))
-    );
-    --theme-gradient-accent: linear-gradient(
-      135deg,
-      hsl(var(--accent)),
-      hsl(var(--accent-glow))
-    );
-    --theme-gradient-surface: linear-gradient(
-      180deg,
-      hsl(var(--background)),
-      hsl(var(--muted))
-    );
-    --theme-gradient-text: linear-gradient(
-      135deg,
-      hsl(var(--primary)),
-      hsl(var(--accent))
-    );
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
-    --shadow-medium: 0 8px 30px -8px hsl(var(--primary) / 0.15);
-    --shadow-strong: 0 16px 40px -12px hsl(var(--primary) / 0.25);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.25);
-
-    /* Motion */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 0.5rem;
-  }
-
-  /* 🌙 Dark Mode */
-  .dark {
-    --background: 210 20% 8%;
-    --foreground: 210 10% 92%;
-
-    --primary: 210 75% 65%;
-    --primary-foreground: 210 20% 8%;
-    --primary-glow: 210 70% 75%;
-
-    --secondary: 210 20% 12%;
-    --secondary-foreground: 210 10% 92%;
-
-    --accent: 155 35% 70%;
-    --accent-foreground: 210 20% 8%;
-    --accent-glow: 155 35% 78%;
-
-    --card: 210 20% 10%;
-    --card-foreground: 210 10% 92%;
-    --card-border: 210 15% 18%;
-
-    --muted: 210 20% 12%;
-    --muted-foreground: 210 8% 65%;
-
-    --border: 210 15% 18%;
-    --input: 210 15% 18%;
-    --ring: 210 60% 65%;
-
-    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
-    --shadow-strong: 0 16px 40px -12px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.35);
+    --card-foreground: 80 5% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 80 5% 17%;
+    --primary: 7 100% 68%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 25% 84%;
+    --secondary-foreground: 80 5% 17%;
+    --muted: 45 25% 90%;
+    --muted-foreground: 100 2% 51%;
+    --accent: 95 58% 61%;
+    --accent-foreground: 80 5% 17%;
+    --destructive: 7 100% 63%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 20% 86%;
+    --input: 45 20% 86%;
+    --ring: 7 100% 68%;
+    --radius: 1.5rem;
   }
 }
 
@@ -112,143 +59,315 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    line-height: 1.7;
-    letter-spacing: 0.2px;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-coral);
+    color: var(--color-white);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  /* ---- The signature block: white, very round, on cream ---- */
+  .pillow {
+    background: var(--color-white);
+    color: var(--color-ink);
+    border-radius: clamp(32px, 4vw, 50px);
   }
 
-  .card-artistic {
-    @apply bg-card border border-card-border rounded-xl
-      shadow-[var(--shadow-soft)]
-      hover:shadow-[var(--shadow-medium)]
-      transition-[var(--transition-smooth)];
+  .pillow-lg {
+    background: var(--color-white);
+    color: var(--color-ink);
+    border-radius: clamp(40px, 5vw, 64px);
   }
 
-  .button-primary {
-    @apply bg-gradient-to-r from-primary to-primary-glow
-      text-primary-foreground
-      px-6 py-3 rounded-lg font-medium
-      shadow-[var(--shadow-soft)]
-      hover:shadow-[var(--shadow-medium)]
-      hover:scale-105
-      transition-[var(--transition-bounce)];
+  .pillow-ink {
+    background: var(--color-night);
+    color: var(--color-cream);
+    border-radius: clamp(40px, 5vw, 64px);
   }
 
-  .button-accent {
-    @apply bg-gradient-to-r from-accent to-accent-glow
-      text-accent-foreground
-      px-6 py-3 rounded-lg font-medium
-      shadow-[var(--shadow-soft)]
-      hover:shadow-[var(--shadow-medium)]
-      hover:scale-105
-      transition-[var(--transition-bounce)];
+  /* ---- Pill button ---- */
+  .pill {
+    border-radius: 50px;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding-inline: 22px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    display: inline-flex;
+    transition: scale 0.25s var(--ease-out), background-color 0.25s, color 0.25s;
   }
 
-  .section-glow {
-    @apply relative;
+  .pill:hover { scale: 1.045; }
+  .pill:active { transition-duration: 0.1s; scale: 0.96; }
+
+  .pill-ink {
+    background: var(--color-ink);
+    color: var(--color-cream);
   }
 
-  .section-glow::before {
+  .pill-outline {
+    border: 1px solid color-mix(in srgb, var(--color-ink) 22%, transparent);
+    color: var(--color-ink);
+  }
+
+  .pill-outline:hover {
+    background: var(--color-ink);
+    color: var(--color-cream);
+  }
+
+  /* ---- Eyebrow label above every section heading ---- */
+  .eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-stone);
+  }
+
+  /* ---- Live status dot with its expanding ring ---- */
+  .live-dot {
+    position: relative;
+    display: inline-flex;
+    height: 8px;
+    width: 8px;
+    flex: none;
+  }
+
+  .live-dot::before {
     content: '';
-    @apply absolute inset-0 -z-10
-      bg-gradient-to-r from-primary/5 to-accent/5
-      rounded-2xl blur-xl;
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: var(--color-grass-deep);
+    animation: live-pulse 2s var(--ease-soft) infinite;
+  }
+
+  .live-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: var(--color-grass-deep);
   }
 }
 
 @layer utilities {
-  /* Typography */
-  .font-display {
-    font-family: 'Sora', sans-serif;
+  .display {
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
   }
 
-  .font-sans {
-    font-family: 'DM Sans', sans-serif;
+  .display-tight {
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
   }
 
-  /* Motion */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-
-  .progress-bar {
-    animation: progressSlide 0.8s ease-out forwards;
-  }
-
-  /* Interaction */
-  .hover-lift {
-    @apply hover:-translate-y-2 transition-transform duration-300;
-  }
-
-  .hover-glow {
-    @apply hover:shadow-[var(--shadow-glow)] transition-shadow duration-300;
-  }
+  .text-ink { color: var(--color-ink); }
+  .text-stone { color: var(--color-stone); }
+  .text-fog { color: var(--color-fog); }
+  .text-coral { color: var(--color-coral); }
+  .text-grass { color: var(--color-grass-deep); }
+  .text-cream { color: var(--color-cream); }
+  .bg-cream { background-color: var(--color-cream); }
+  .bg-ink { background-color: var(--color-ink); }
+  .bg-coral { background-color: var(--color-coral); }
+  .bg-grass { background-color: var(--color-grass); }
+  .bg-sun { background-color: var(--color-sun); }
+  .bg-sky { background-color: var(--color-sky); }
+  .bg-sandstone { background-color: var(--color-sandstone); }
 }
 
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* ---- The 3D rotating project ring in the hero ---- */
+.deck {
+  --deck-r: clamp(300px, min(50vw, 85vh), 700px);
+  --deck-w: calc(var(--deck-r) * 0.228);
+  width: 100%;
+  height: calc(var(--deck-w) * 1.36);
+  position: relative;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.deck-stage {
+  perspective: calc(var(--deck-r) * 4.8);
+  position: absolute;
+  inset: 0;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.deck-ring {
+  transform-style: preserve-3d;
+  animation: deck-spin 104s linear infinite;
+  position: absolute;
+  inset: 0;
 }
 
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+.deck-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--deck-w);
+  height: calc(var(--deck-w) * 1.36);
+  margin-left: calc(var(--deck-w) / -2);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: 0 10px 30px -16px rgb(44 46 42 / 0.45);
+  transform: rotateY(var(--deck-a)) translateZ(var(--deck-r));
 }
 
-@keyframes progressSlide {
-  from { width: 0%; }
-  to { width: var(--progress-width); }
+/* ---- Oversized background word that drifts sideways ---- */
+.ghost {
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.8;
+  white-space: nowrap;
+  color: var(--color-sandstone);
+  animation: ghost-drift 26s linear infinite alternate;
+  user-select: none;
 }
 
-.blob {
-  background: linear-gradient(
-    135deg,
-    rgba(124, 58, 237, 0.35),
-    rgba(6, 182, 212, 0.25)
-  );
-  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
-  animation: blobMorph 10s ease-in-out infinite;
-  filter: blur(18px);
+@keyframes deck-spin {
+  0% { transform: rotateY(0); }
+  100% { transform: rotateY(360deg); }
 }
 
-@keyframes blobMorph {
-  0% {
-    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
-  }
-  50% {
-    border-radius: 58% 42% 37% 63% / 59% 56% 44% 41%;
-  }
-  100% {
-    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
-  }
+@keyframes ghost-drift {
+  0% { transform: translate(0); }
+  100% { transform: translate(-9%); }
+}
+
+@keyframes live-pulse {
+  0% { opacity: 0.9; transform: scale(1); }
+  70%, 100% { opacity: 0; transform: scale(2.6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deck-ring,
+  .ghost { animation: none; }
+  .live-dot::before { opacity: 0; animation: none; }
+}
+
+/* ============================================================
+   Layout bands + typography scale (matched to the reference)
+   ============================================================ */
+
+.band { padding-block: clamp(88px, 11vh, 136px); }
+
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+.t-heading-xl {
+  letter-spacing: -0.06em;
+  font-size: clamp(3rem, 11vw, 9rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.t-heading-lg {
+  letter-spacing: -0.06em;
+  font-size: clamp(2.5rem, 6vw, 5.0625rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.t-heading-md {
+  letter-spacing: -0.03em;
+  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.t-heading-sm {
+  letter-spacing: -0.02em;
+  font-size: clamp(1.375rem, 2.2vw, 1.875rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.t-micro {
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.t-sm { font-size: 0.9375rem; line-height: 1.5; }
+.t-body { font-size: 1.0625rem; line-height: 1.6; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* ---- Logo marquees in the toolbox band ---- */
+.logo-loop {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-loop-a { animation: loop-left 42s linear infinite; }
+.logo-loop-b { animation: loop-right 52s linear infinite; }
+
+@keyframes loop-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes loop-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* ---- Hot pink used for the giant WORK letters ---- */
+.letters-pink { color: #ff007f; }
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-loop-a, .logo-loop-b { animation: none; }
+}
+
+/* Chips sit at a slight hand-placed angle, set per element via --tilt/--lift */
+[data-scatter] {
+  transform: rotate(var(--tilt, 0deg)) translateY(var(--lift, 0px));
+}
+
+/* Closing headline scale + the underline-from-background link */
+.t-display {
+  letter-spacing: -0.06em;
+  font-size: clamp(3.35rem, 10.5vw, 8.75rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.t-label { font-size: 0.9375rem; font-weight: 500; line-height: 1.2; }
+
+.u-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  text-decoration: none;
 }
